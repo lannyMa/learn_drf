@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>index</h1>
+
+<button id="add">click</button>
+
+<script src="/static/js/jquery-1.12.4.min.js"></script>
+<script src="/static/js/jquery.cookie.js"></script>
+<script>
+    $(function () {
+        getdata();
+    });
+
+    function getdata() {
+        $("#add").click(function () {
+            $.post('/login/', {'name': 'maotai'}, function (res) {
+                console.log(res);
+            })
+        })
+    }
+</script>
+</body>
+</html>
